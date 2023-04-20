@@ -396,58 +396,101 @@ nav a:focus::after {
 .price-section .content {
     flex-direction: column;
     width: 100%;
+    align-items: center;
 }
 
 
 .price-section h1 {
     font-size: 3rem;
-}
-
-.prices-wrapper {
-    margin-top: 50px;
-    margin-bottom: 50px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    text-align: left;
     width: 100%;
-    gap: 50px;
-}
 
-.price-table h1 {
-    font-size: 2rem;
+    
 }
 
 .price-table {
     color: var(--color-text);
-    display: flex;
-    flex-direction: column;
-    background-color: var(--color-bg);
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.6);
-    height: 100%;
-}
+    border-spacing: 20px;
+    width: 100%;
 
-.services-wrapper {
-    margin-top: 10px;
-}
-
-.service {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
-    padding: 10px;
-    padding-left: 10px;
-
-    border-radius: 10px;
 }
 
 .price {
+    border: 4px solid;
+    border-image: linear-gradient(315deg, var(--color-two), var(--color-logo));
+    border-image-slice: 1;
+    text-align: center;
+    vertical-align: middle;
+    height: 60px;
+    width: 100px;
+    min-width: 100px;
+
+    color: var(--color-text);
+
+    background: none;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: unset;
+
+    font-size: 1.5rem;
     font-weight: bold;
 }
 
-.dark {
-    background-color: #222222;
+.tables-wrapper {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+}
+
+.gap {
+    width: 60px;
+}
+
+.price-table.weekdays, .price-table.weekends{
+    display: none;
+}
+
+.time-header {
+    text-align: left;
+    padding-left: 10px;
+    background: url("src/time-bg.svg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 150px;
+    min-width: 150px;
+    color: var(--color-bg);
+}
+
+.time-header span {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 900;
+    font-stretch: ultra-expanded;
+    font-size: 1.5rem;
+}
+
+.title-td {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.title-td .title {
+    font-family: 'Rubik', serif;
+}
+
+img.title {
+    width: 100%;
+}
+
+.tariff-name {
+    font-size: 1.5rem;
+    font-weight: 100;
+}
+
+.days th span {
+    font-size: 1.5rem;
+    font-family: 'Rubik', serif;
 }
 
 
@@ -563,6 +606,10 @@ nav a:focus::after {
     font-weight: bold;
 }
 
+.policy-wrapper a {
+    font-size: 1.25rem;
+}
+
 
 /* YANDEX MAPS SECTION */
 
@@ -592,6 +639,24 @@ nav a:focus::after {
     
 }
 
+@media screen and (max-width: 1160px) {
+    .price {
+        height: 40px;
+        width: 75px;
+        min-width: 75px;
+        font-size: 1rem;
+    }
+
+    .time-header {
+        width: 100px;
+        min-width: 100px;
+    }
+
+    .time-header span, .tariff-name, .days th span {
+        font-size: 1rem;
+    }
+}
+
 @media screen and (max-width: 880px) { 
     .main-section .content .pic-wrapper {
         display: none;
@@ -615,6 +680,41 @@ nav a:focus::after {
     .policy-wrapper {
         margin-top: 20px;
         margin-bottom: 10px;
+    }
+
+    .price-table {
+        display: none;
+    }
+
+    .price-table.weekdays, .price-table.weekends{
+        display: block;
+    }
+
+    .price-table {
+        width: auto;
+    }
+
+    .header-gap {
+        width: 100%;
+    }
+
+    .price {
+        height: 60px;
+        width: 100px;
+        min-width: 100px;
+    }
+
+    .tables-wrapper {
+        display: flex;
+    }
+
+    .time-header span, .tariff-name, .days th span, .price {
+        font-size: 1.5rem;
+    }
+
+    .time-header {
+        width: 150px;
+        min-width: 150px;
     }
 }
 
@@ -643,4 +743,29 @@ nav a:focus::after {
         flex-direction: column;
         align-items: center;
     }
+}
+
+@media screen and (max-width: 600px) {
+    .price {
+        height: 30px;
+        width: 50px;
+        min-width: 50px;
+
+        border-width: 3px;
+        font-size: 1rem;
+    }
+
+    .time-header {
+        width: 95px;
+        min-width: 95px;
+    }
+
+    .title-td .title {
+        font-size: 2rem;
+    }
+
+    .time-header span, .tariff-name, .days th span {
+        font-size: 1rem;
+    }
+    
 }
