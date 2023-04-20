@@ -118,6 +118,81 @@
 
         <section class="price-section" id="price-section">
             <div class="content">
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                        <div id="modal-title">
+                            <div class="modal-tariff-wrapper vertical-centered">
+                                <h1 id="modal-tariff">Тариф "NORMAL"</h1>
+                            </div>
+                            <span class="close">&times;</span>
+                        </div>
+                        <div id="modal-info">
+                            <div id="modal-chars">
+                                <div class="modal-chars-title">
+                                    <div class="text-wrapper">
+                                        <h1>ИНФОРМАЦИЯ</h1>
+                                    </div>
+                                </div>
+                                <div class="modal-char">
+                                    <div class="text-wrapper">
+                                        <p>ДЕНЬ: <span id="modal-weekday">БУДНИЙ</span></p>
+                                    </div>
+                                    <div class="text-wrapper">
+                                        <p>ВРЕМЯ: <span id="modal-time">1 ЧАС</span></p>
+                                    </div>
+                                    <div class="text-wrapper">
+                                        <p>ЦЕНА: <span id="modal-price">50₽</span></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="modal-pc-wrapper">
+                                <div class="modal-pc-title">
+                                    <div class="text-wrapper">
+                                        <h1>ХАРАКТЕРИСТИКИ ПК</h1>
+                                    </div>
+                                </div>
+                                <div id="modal-pc">
+                                    <div class="modal-pc-part">
+                                        <img src="src/gpu.png" />
+                                        <div class="text-wrapper">
+                                            <p id="gpu">NVIDIA GeForce GTX 1050 Ti</p>
+                                        </div>
+                                    </div>
+                                    <div class="modal-pc-part">
+                                        <img src="src/cpu.png" />
+                                        <div class="text-wrapper">
+                                            <p id="cpu">AMD Ryzen 5 5600X</p>
+                                        </div>
+                                    </div>
+                                    <div class="modal-pc-part">
+                                        <img src="src/ram.png" />
+                                        <div class="text-wrapper">
+                                            <p id="ram">16Gb, 3200Mhz</p>
+                                        </div>
+                                    </div>
+                                    <div class="modal-pc-part">
+                                        <img src="src/monitor.png" />
+                                        <div class="text-wrapper">
+                                            <p id="screen">240Hz, 23.8", curved</p>
+                                        </div>
+                                    </div>
+                                    <div class="modal-pc-part">
+                                        <img src="src/mouse.png" />
+                                        <div class="text-wrapper">
+                                            <p id="mouse">A4Tech Bloody V7</p>
+                                        </div>
+                                    </div>
+                                    <div class="modal-pc-part">
+                                        <img src="src/keyboard.png" />
+                                        <div class="text-wrapper">
+                                            <p id="keyboard">A4Tech Bloody LK Gaming</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <table class="price-table">
                     <tr class="title-row">
                         <td>
@@ -447,5 +522,6 @@
         </footer>
         <script src="scripts/qualities-animation.js"></script>
         <script src="scripts/menu.js"></script>
+        <script src="scripts/modal.js"></script>
     </body>
 </html>
