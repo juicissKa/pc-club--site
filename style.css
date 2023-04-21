@@ -48,6 +48,26 @@ h1, p {
     -webkit-text-fill-color: transparent;
 }
 
+.modal-fon {
+    background-image: url('src/modal-fon.png');
+    background-position: 50%;
+}
+
+.modal-fon2 {
+    background-image: url('src/modal-fon2.png');
+    background-position: 50%;
+}
+
+.modal-fon3 {
+    background-image: url('src/modal-fon3.png');
+    background-position: 50%;
+}
+
+.modal-fon4 {
+    background-image: url('src/modal-fon4.png');
+    background-position-y: bottom;
+}
+
 /* MENU BUTTON */
 
 .menu-block {
@@ -503,7 +523,7 @@ img.title {
 
 /* MODAL */
 .modal {
-    display: none; 
+    display: block;
     position: fixed; 
     z-index: 99; 
     left: 0;
@@ -513,7 +533,12 @@ img.title {
     overflow: auto; 
     background-color: rgb(0,0,0); 
     background-color: rgba(0,0,0,0.4); 
-  }
+}
+
+.horizontal-centered {
+    display: flex;
+    justify-content: center;
+}
 
 .modal-content {
     background-color: var(--color-main);
@@ -521,8 +546,6 @@ img.title {
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.6);
     width: 80%; /* Could be more or less, depending on screen size */
     border-radius: 20px;
-    display: flex;
-    justify-content: center;
     flex-direction: column;
     align-items: center;
 
@@ -546,13 +569,10 @@ img.title {
     cursor: pointer;
 }
 
-.modal-content #modal-title {
+#modal-title {
     width: 100%;
     display: flex;
-    justify-content: space-between;
-    background-image: url("src/modal-fon.png");
     background-size: 100%;
-    background-position: 50%;
     background-repeat: no-repeat;
 
     border-radius: 20px 20px 0 0;
@@ -565,7 +585,7 @@ img.title {
 
 #modal-info {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(10, 1fr);
     width: 100%;
     gap: 40px;
     padding: 40px;
@@ -601,8 +621,6 @@ img.title {
 #modal-tariff {
     padding-left: 20%;
     padding-top: 10px;
-    width: 100%;
-    min-width: 600px;
 }
 
 .modal-char {
@@ -620,7 +638,7 @@ img.title {
     font-size: 1.5rem;
 }
 
-#modal-tariff-wrapper {
+.modal-tariff-wrapper {
     height: 100%;
     width: 100%;
 }
@@ -630,7 +648,7 @@ img.title {
 }
 
 #modal-chars {
-    grid-column: 1 / 2;
+    grid-column: 1 / 4;
     width: 100%;
 }
 
@@ -645,7 +663,11 @@ img.title {
 }
 
 #modal-pc-wrapper {
-    grid-column: 2 / 6;
+    grid-column: 4 / 11;
+}
+
+.modal-char .text-wrapper span {
+    float: right;
 }
 
 /* WORK-DESC SECTION */
@@ -791,10 +813,15 @@ img.title {
     .contacts-wrapper {
         grid-template-columns: 1fr;
     }
-    
+
+    #modal-title {
+        background-size: auto;
+        height: 40vh;
+    }
 }
 
-@media screen and (max-width: 1160px) {
+@media screen and (max-width: 1220px) {
+
     .price {
         height: 40px;
         width: 75px;
@@ -812,30 +839,23 @@ img.title {
     }
 }
 
-@media screen and (max-width: 880px) { 
-    .main-section .content .pic-wrapper {
-        display: none;
+@media screen and (max-width: 1160px) {
+
+    #modal-chars {
+        grid-column: 1 / 5;
     }
-    .footer {
-        flex-direction: column;
-        align-items: center;
+    
+    #modal-pc-wrapper {
+        grid-column: 5 / 11;
     }
-    .contacts-wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+
+    #modal-pc {
+        grid-template-columns: 1fr;
     }
-    .phone-wrapper {    
-        margin-top: 10px;
-    }
-    .logo {
-        margin-top: 20px;
-        margin-bottom: 10px;
-    }
-    .policy-wrapper {
-        margin-top: 20px;
-        margin-bottom: 10px;
-    }
+
+}
+
+@media screen and (max-width: 960px) { 
 
     .price-table {
         display: none;
@@ -871,6 +891,55 @@ img.title {
         width: 150px;
         min-width: 150px;
     }
+
+}
+
+
+@media screen and (max-width: 880px) { 
+    .main-section .content .pic-wrapper {
+        display: none;
+    }
+    .footer {
+        flex-direction: column;
+        align-items: center;
+    }
+    .contacts-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .phone-wrapper {    
+        margin-top: 10px;
+    }
+    .logo {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    .policy-wrapper {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    #modal-chars {
+        grid-column: auto;
+    }
+    
+    #modal-pc-wrapper {
+        grid-column: auto;
+    }
+
+    #modal-info {
+        grid-template-columns: 1fr;
+    }
+
+    #modal-title {
+        background-size: auto;
+        height: 30vh;
+    }
+
+    #modal-tariff {
+        text-align: center;
+    }
 }
 
 @media screen and (max-width: 800px) { 
@@ -900,7 +969,7 @@ img.title {
     }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 720px) {
     .price {
         height: 30px;
         width: 50px;
