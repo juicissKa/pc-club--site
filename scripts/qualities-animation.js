@@ -9,9 +9,13 @@
         if (typeof getCurrentAnimationPreference === 'function' && !getCurrentAnimationPreference()) {
           return;
         }
-  
+        
         if (entry.isIntersecting) {
-          entry.target.classList.add('quality-animation');
+          if (entry.target.classList.contains("quality-right")) {
+            entry.target.classList.add('quality-animation-right');
+          } else if (entry.target.classList.contains("quality-left")) {
+            entry.target.classList.add('quality-animation-left');
+          }
         }
       });
     });
